@@ -1,30 +1,26 @@
 import React, {useEffect, useState} from "react";
 import markerBlue from './assets/marker_blue.png'
-import './FetchData.js';
-import fetchMarkerDetail from "./FetchData.js";
+import './fetchData.js';
 import deleteNode from "./deleteNode";
 import './Map.css';
-import MapToiletCard from "./MapToiletCard";
-
-const {kakao} = window;
+import MapToiletCard from "./components/toiletCard/MapToiletCard";
+import TopNav from "./TopNav";
+import { useLocation } from "react-router-dom";
+const {naver} = window;
 const MapContainer = () => {
     const [pk, setPk] = useState();
-    
-    let imageSize = new kakao.maps.Size(34, 34), // 마커이미지의 크기입니다
-        imageOption = {offset: new kakao.maps.Point(10, 20)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다. (+왼쪽, +위쪽)
-    
-    let markerImageRedMarker = new kakao.maps.MarkerImage(markerBlue, imageSize, imageOption);
-
+    const location = useLocation();
+    console.log(location.state.user);
     let formdataTmp = new FormData();
-
+    
     useEffect(() => {
         const container = document.getElementById('myMap');
             const options = {
-                center: new kakao.maps.LatLng(37.32194457569437, 126.83082307143813),
+                center: new naver.maps.LatLng(37.32194457569437, 126.83082307143813),
                 level: 3
             };
-        const map = new kakao.maps.Map(container, options);
-        kakao.maps.event.addListener(map, 'click', function(){
+        const map = new naver.maps.Map(container, options);
+        naver.maps.Event.addListener(map, 'click', function(){
             document.getElementById('toilet-summary').style.display = 'none';
             deleteNode('toilet-card');
         });
@@ -45,12 +41,18 @@ const MapContainer = () => {
                 // console.log(m);
                 let latlng = m['geoJson']['S'].split(',')
               
-                let marker = new kakao.maps.Marker({
-                    position: new kakao.maps.LatLng (latlng[0], latlng[1]),
-                    image : markerImageRedMarker,
+                let marker = new naver.maps.Marker({
+                    position: new naver.maps.LatLng (latlng[0], latlng[1]),
+                    icon : {
+                        url: markerBlue,
+                        size: new naver.maps.Size(34, 34),
+                        scaledSize: new naver.maps.Size(34, 34),
+                        origin: new naver.maps.Point(0, 0),
+                        anchor: new naver.maps.Point(12, 34)
+                    },
                     title : m['PK']['S']
                 });
-                kakao.maps.event.addListener(marker, 'click', function(){
+                naver.maps.Event.addListener(marker, 'click', function(){
                     map.setCenter(marker.getPosition());
                     try {
                         deleteNode('toilet-card');
@@ -65,13 +67,16 @@ const MapContainer = () => {
             }
             console.log(loc);
         })
-    }, []);
+    },[]);
     return(
-        <div id='myMapWrapper'>
-            <div id='myMap'></div>
-            <MapToiletCard toiletPK= {pk}></MapToiletCard>
-        </div>
+        <>
+            <TopNav email={location.state.user} ></TopNav>
+            <div id='myMapWrapper'>
+                <div id='myMap'></div>
+                <MapToiletCard toiletPK= {pk}></MapToiletCard>
+            </div>
+        </>
     );
 }
 
-export default MapContainer;
+export default React.memo(MapContainer);

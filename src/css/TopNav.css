@@ -17,3 +17,27 @@ nav{
 #topnav-logo{
     width: 2.5rem;
 }
+#topnav-login-email{
+    z-index: 100;
+    position: absolute;
+    /* display: flex; */
+    right: 2.5rem;
+    top: 7.25px;
+    color: grey;
+    font-size: 0.5rem;
+}
+
+#topnav-logout{
+    z-index: 100;
+    position: absolute;
+    /* display: flex; */
+    right: 1px;
+    top: 7.25px;
+    color: #faf1f1;
+    font-size: 0.5rem;
+    cursor: default;
+    background-color: #33adf4;
+    width: 2rem;
+    border: 1px solid #33adf4;
+    text-align: center;
+}

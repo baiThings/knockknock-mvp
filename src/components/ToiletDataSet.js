@@ -1,4 +1,4 @@
-import dataSet from './assets/toilet_data.json'
+import dataSet from '../assets/toilet_data.json'
 
 function ToiletDataSet(){
    let toiletSet = new Map();

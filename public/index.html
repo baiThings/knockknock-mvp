@@ -3,13 +3,27 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6562d56d984e149e99de83f1c6b79e98"></script>
+     <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NWQPRVT');</script>
+    <script>
+      window.dataLayer.push({ userid: 'testuser'})
+    </script>
+    <!-- End Google Tag Manager -->
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=6uwqid8hjq"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+    <!-- <script type="module" src="../src/components/s3config.js"></script> -->
+
+    <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6562d56d984e149e99de83f1c6b79e98"></script>
     <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.0/kakao.min.js"
     integrity="sha384-PFHeU/4gvSH8kpvhrigAPfZGBDPs372JceJq3jAXce11bVA6rMvGWzvP4fMQuBGL" crossorigin="anonymous"></script>
     <script>
       Kakao.init('6562d56d984e149e99de83f1c6b79e98'); // 사용하려는 앱의 JavaScript 키 입력
-    </script>
-  
+    </script> -->
+ 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -36,6 +50,10 @@
     <title>React App</title>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWQPRVT"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     

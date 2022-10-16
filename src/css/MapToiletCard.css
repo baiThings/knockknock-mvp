@@ -2,9 +2,9 @@
     position: absolute;
     bottom: 0%;
     /* left: 15%; */
-    z-index: 2;
+    z-index: 102;
     background-color: #ffffff;
-    /* width:100%; */
+    width: calc(100% - 40px);
     height: 35%;
     display: none;
     padding: 20px 20px 20px 20px;
@@ -26,12 +26,22 @@
 }
 #toilet-card-node{
     margin: 10px;
-}
-#toilet-title{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin-bottom: 20px;
+    padding: 3px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    color: grey;
+}
+#toilet-card-node-img{
+    width: 1rem;
+    margin-right: 5px;
+}
+#toilet-title{
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: space-around; */
+    margin-bottom: 0.5rem;
 }
 
 #toilet-title-name{
@@ -43,15 +53,70 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    flex-direction: row;
+    font-size: 0.95rem;
+    flex-direction: column-reverse;
+}
+#toilet-content-items{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+#toilet-content-address{
+    /* margin: 10px 0px; */
+    display: flex;
+    flex-direction: column;
 }
 
+#toilet-card-label{
+    color: grey;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: 10px 0px;
+    width: 100%;
+}
+#toilet-title-label{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
 #toilet-tag-name{
     border: 2px solid #15d415;
     width: 20%;
     font-weight: 600;
     text-align: center;
-    color: #15d415;
+    background-color: #15d415;
     font-size: 0.8rem;
     border-radius: 10px;
+    margin-left: 1rem;
+    color: white;
+}
+#toilet-tag-navi{
+    border: 2px solid #ffc00d;
+    width: 20%;
+    font-weight: 600;
+    text-align: center;
+    background-color: #ffc00d;
+    font-size: 0.8rem;
+    border-radius: 10px; 
+    margin-left: 1rem;
+    color: white;
+
+}
+#toilet-photo{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    text-decoration: none;
+}
+
+#toilet-photo-name{
+    border: 2px solid #0d62ff;
+    font-weight: 600;
+    text-align: center;
+    background-color: #0d62ff;
+    font-size: 0.6rem;
+    border-radius: 10px;
+    color: white;
+    width: 3rem;
+
 }
