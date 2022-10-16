@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import markerBlue from './assets/marker_blue.png'
-import './fetchData.js';
+import './components/fetchData.js';
 import deleteNode from "./deleteNode";
 import './Map.css';
 import MapToiletCard from "./components/toiletCard/MapToiletCard";
