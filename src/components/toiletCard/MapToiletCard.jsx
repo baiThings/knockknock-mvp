@@ -9,7 +9,7 @@ const MapToiletCard = (props) => {
             console.log(props.toiletPK)
            if(props.toiletPK){
                 fetchMarkerDetail(props.toiletPK).then(data => {
-                makeTitle(data['Items'][0]['bldNm']['S']);
+                makeTitle(data['Items'][0]);
                 makeItems(data['Items'][0]);
               })   
             }

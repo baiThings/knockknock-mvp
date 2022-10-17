@@ -4,7 +4,7 @@ import PhotoCard from './components/photos/PhotoCard';
 import Login from './components/start/Login';
 import './css/TopNav.css';
 import MapContainer from './MapContainer';
-import TopNav from './TopNav';
+// import TopNav from './TopNav';
 
 function App() {
 

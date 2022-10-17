@@ -10,7 +10,6 @@ const {naver} = window;
 const MapContainer = () => {
     const [pk, setPk] = useState();
     const location = useLocation();
-    console.log(location.state.user);
     let formdataTmp = new FormData();
     
     useEffect(() => {
@@ -70,7 +69,7 @@ const MapContainer = () => {
     },[]);
     return(
         <>
-            <TopNav email={location.state.user} ></TopNav>
+            <TopNav ></TopNav>
             <div id='myMapWrapper'>
                 <div id='myMap'></div>
                 <MapToiletCard toiletPK= {pk}></MapToiletCard>
