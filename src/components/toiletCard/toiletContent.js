@@ -5,7 +5,7 @@ function makeItemNode(item, state){
     let newNode = document.createElement('div');
     newNode.id = 'toilet-card-node';
    
-    console.log(state)
+    // console.log(state)
     // newNode.style.color = 'white'
     if(state === true) {
         newNode.style.backgroundColor = '#15d415'

@@ -11,8 +11,8 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<Login></Login>}/>
-      <Route path="/map" element={<MapContainer></MapContainer>}/>
-      <Route path="/photos/:toiletPK" element={<PhotoCard></PhotoCard>}/>
+      <Route path="/map/:toiletLoc" element={<MapContainer></MapContainer>}/>
+      <Route path="/photos/:toiletPK/:toiletLoc" element={<PhotoCard></PhotoCard>}/>
     </Routes>
   );
 }

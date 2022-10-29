@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { auth } from '../../fbase';
+import '../../css/Start.css'
+import logo from "../../assets/kk-logo.png";
+
 import { GoogleAuthProvider, inMemoryPersistence, setPersistence, signInWithPopup, signInWithRedirect } from 'firebase/auth';
 import { getAnalytics, setUserId } from "firebase/analytics";
 import { Link, Navigate, Redirect, useNavigate } from "react-router-dom";
@@ -73,11 +76,22 @@ const Login = () => {
     // }
    return (
     <>
-          <button onClick={handleGoogleLogin}>Login</button>
-            {userData ? userData.displayName : null}
-            {
-                // flag === true ? moveTo() : null
-            }
+         <div id='start-page'>
+          <div id='start-header'>
+              <div id='start-header-title'>
+                <p>당신에게 </p>
+                <p>외출의</p>
+                <p>즐거움을</p>
+                <p> 선사합니다.</p>
+              </div>
+              <div id='start-header-logo'>
+                <img id='start-header-logo-icon' src={logo}/>
+              </div>
+          </div>
+            <div id='start-footer'>
+            <Link to={'/map/1'}>맵으로 이동하기</Link>
+            </div>
+        </div>
     </>
    ) 
 }

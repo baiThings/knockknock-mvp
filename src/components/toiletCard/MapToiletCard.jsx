@@ -1,16 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import '../../css/MapToiletCard.css';
 import fetchMarkerDetail from "../fetchData";
 import makeTitle from "./toiletTitle.js";
 import makeItems from "./toiletContent.js";
 import { Link } from "react-router-dom";
+import Loading from "components/Loading";
 const MapToiletCard = (props) => {
+  const [loading, setLoading] = useState(true);
         useEffect(()=>{
             console.log(props.toiletPK)
+            console.log(props.toiletLoc)
            if(props.toiletPK){
+                setLoading(true);
                 fetchMarkerDetail(props.toiletPK).then(data => {
-                makeTitle(data['Items'][0]);
-                makeItems(data['Items'][0]);
+                  setLoading(false);
+                  makeTitle(data['Items'][0]);
+                  makeItems(data['Items'][0]);
               })   
             }
         },[props.toiletPK]);
@@ -18,7 +23,8 @@ const MapToiletCard = (props) => {
      
     return(
         <div id="toilet-summary">
-             <Link id='toilet-photo' to={'/photos/' + props.toiletPK}>
+            {loading ? <Loading /> : null}
+             <Link id='toilet-photo' to={'/photos/' + props.toiletPK + '/' + props.toiletLoc}>
                 <div id="toilet-photo-name">
                   사진보기
                 </div>  

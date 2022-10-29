@@ -2,6 +2,7 @@ import { S3, S3Client, ListObjectsCommand } from "@aws-sdk/client-s3";
 import { S3ClientConfig } from "@aws-sdk/client-s3";
 import { CognitoIdentityClient } from "@aws-sdk/client-cognito-identity";
 import { fromCognitoIdentityPool} from "@aws-sdk/credential-provider-cognito-identity"
+import { Link } from "react-router-dom";
 
 var albumBucketName = 'toilet-img';
 var bucketRegion = 'ap-northeast-2';
@@ -23,7 +24,7 @@ export const viewAlbum = async (albumName, pk) => {
           Prefix: albumPhotosKey,
           Bucket: albumBucketName,
         })
-      );
+      )
       console.log(data)
       const href = "https://s3." + bucketRegion + ".amazonaws.com/";
       const bucketUrl = href + albumBucketName + "/";
@@ -39,7 +40,7 @@ export const viewAlbum = async (albumName, pk) => {
 
       return urls;
     } catch (err) {
-      return alert("There was an error viewing your album: " + err.message);
+      return  alert("사진이 없습니다");
     }
   };
   

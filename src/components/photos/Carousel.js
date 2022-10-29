@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import '../../css/Photos.css'
 
 const Carousel = (props) => {
@@ -25,22 +26,23 @@ const Carousel = (props) => {
             <div className="carousel-wrapper">
             {
                 currentIndex > 0 &&
-                <button onClick={prev} className="left-arrow">
+                <div onClick={prev} className="left-arrow">
                     &lt;
-                </button>
-            }
-                <div className="carousel-content-wrapper">
-                    <div className="carousel-content"  style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-                        {children}
-                    </div>
                 </div>
+            }
+            <div className="carousel-content-wrapper">
+                <div className="carousel-content"  style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+                    {children}
+                </div>
+            </div>
             {
                 currentIndex < (length - 1) &&
-                <button onClick={next} className="right-arrow">
+                <div onClick={next} className="right-arrow">
                     &gt;
-                </button>
+                </div>
             }
             </div>
+
         </div>
     )
 }

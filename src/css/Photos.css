@@ -1,18 +1,22 @@
 .carousel-container {
     width: 100%;
+    height: 90vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    background-color: black;
 }
 
 .carousel-wrapper {
     display: flex;
     width: 100%;
     position: relative;
+    justify-content: center;
 }
 
 .carousel-content-wrapper {
     overflow: hidden;
-    width: 100%;
+    width: 25rem;
     height: 100%;
 }
 
@@ -41,9 +45,13 @@
     transform: translateY(-50%);
     width: 48px;
     height: 48px;
-    border-radius: 24px;
-    background-color: white;
-    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #ffffff57;
+    /* border-radius: 24px; */
+    /* background-color: white; */
+    /* border: 1px solid #ddd; */
 }
 
 .left-arrow {
@@ -52,4 +60,30 @@
 
 .right-arrow {
     right: 24px;
+}
+
+#back-button{
+    width: 100%;
+    font-weight: bold;
+    height: 10vh;
+    background-color: black;
+    font-size: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* a:visited { color: rgb(255, 255, 0);} */
+a:link{
+    text-decoration: none; 
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#back-button-link{
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    border: 1px solid  white;
+    color: white;
 }
